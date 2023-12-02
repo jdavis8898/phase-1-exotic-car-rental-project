@@ -11,11 +11,20 @@
           "Absolutely my favorite!",
           "Enjoyed renting this car for my proposal!"
         ],
+<<<<<<< HEAD
         "8hrprice": "$200",
           "24hrprice": "$500",
         "Satus": "Available" ,
         "user": 
             "admin"
+=======
+<<<<<<< HEAD
+        "user": "admin"
+=======
+        "user": 
+            "admin"
+>>>>>>> 3677c91 (save changes)
+>>>>>>> e14df68 (save changes)
       },
       {
         "id": 2,
@@ -26,11 +35,20 @@
           "Nothing can beat this car!",
           "Surprised my family with this car and they loved it!"
         ],
+<<<<<<< HEAD
         "8hrprice": "$300",
           "24hrprice": "$600",
         "Satus": "Available" ,
         "user": 
             "admin"
+=======
+<<<<<<< HEAD
+        "user": "admin"
+=======
+        "user": 
+            "admin"
+>>>>>>> 3677c91 (save changes)
+>>>>>>> e14df68 (save changes)
       },
       {
         "id": 3,
@@ -41,11 +59,20 @@
           "I felt very special driving this car!",
           "Extraordinary, gotta say I had a blast driving this car."
         ],
+<<<<<<< HEAD
         "8hrprice": "$400",
           "24hrprice": "$800",
         "Satus": "Available" ,
         "user": 
             "admin"
+=======
+<<<<<<< HEAD
+        "user": "admin"
+=======
+        "user": 
+            "admin"
+>>>>>>> 3677c91 (save changes)
+>>>>>>> e14df68 (save changes)
       },
       {
         "id": 4,
@@ -55,11 +82,20 @@
         "reviews": [
           "Never seen something like this car!"
         ],
+<<<<<<< HEAD
         "8hrprice": "$400",
           "24hrprice": "$1200",
         "Satus": "Available" ,
         "user": 
             "admin"
+=======
+<<<<<<< HEAD
+        "user": "admin"
+=======
+        "user": 
+            "admin"
+>>>>>>> 3677c91 (save changes)
+>>>>>>> e14df68 (save changes)
       },
       {
         "id": 5,
@@ -70,11 +106,20 @@
           "Rented this car for my sons birthday. It truly made his day!",
           "This car was a dream to ride! I can't believe I drove this car in town."
         ],
+<<<<<<< HEAD
         "8hrprice": "$100",
           "24hrprice": "$300",
         "Satus": "Available" ,
         "user": 
             "admin"
+=======
+<<<<<<< HEAD
+        "user": "admin"
+=======
+        "user": 
+            "admin"
+>>>>>>> 3677c91 (save changes)
+>>>>>>> e14df68 (save changes)
       }
     ]
 }
