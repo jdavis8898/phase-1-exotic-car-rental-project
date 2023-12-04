@@ -32,7 +32,6 @@ We will have a toggle button that shows if a car is available or not and the adm
 We will also look at making it possible to delete reviews, DELETE
 
 
-
 ## Test info
 {
     "cars": [ 
@@ -64,3 +63,5 @@ We will also look at making it possible to delete reviews, DELETE
         }
     ]
 }
+
+"http://localhost:3000/cars"
