@@ -11,8 +11,7 @@
           "Absolutely my favorite!",
           "Enjoyed renting this car for my proposal!"
         ],
-        "user": 
-            "admin"
+        "user": "admin"
       },
       {
         "id": 2,
@@ -23,8 +22,7 @@
           "Nothing can beat this car!",
           "Surprised my family with this car and they loved it!"
         ],
-        "user": 
-            "admin"
+        "user": "admin"
       },
       {
         "id": 3,
@@ -35,8 +33,7 @@
           "I felt very special driving this car!",
           "Extraordinary, gotta say I had a blast driving this car."
         ],
-        "user": 
-            "admin"
+        "user": "admin"
       },
       {
         "id": 4,
@@ -46,8 +43,7 @@
         "reviews": [
           "Never seen something like this car!"
         ],
-        "user": 
-            "admin"
+        "user": "admin"
       },
       {
         "id": 5,
@@ -58,8 +54,7 @@
           "Rented this car for my sons birthday. It truly made his day!",
           "This car was a dream to ride! I can't believe I drove this car in town."
         ],
-        "user": 
-            "admin"
+        "user": "admin"
       }
     ]
 }
