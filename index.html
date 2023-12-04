@@ -11,7 +11,6 @@
   </head>
   <body>
     <header>
-      <h1>Exotic Car Rental</h1>
       <nav>
         <ul id="car-list">
          
@@ -20,6 +19,7 @@
     </header>
 
     <main>
+      <h1>Exotic Car Rental</h1>
       <div class="car-details">
         <h2 id="car-name">Car Name Goes Here</h2>
         <img
@@ -30,12 +30,6 @@
         <p>
           <em id="car-description">Car Description Goes Here</em>
         </p>
-
-        <form id="description-form">
-          <label for="description">Edited Description:</label>
-          <textarea id="description"></textarea>
-          <button type="submit">Update Cake</button>
-        </form>
 
         <h3>Customer Reviews</h3>
         <ul id="review-list">
@@ -48,6 +42,19 @@
           <label for="username">Your Username:</label>
           <textarea id="username"></textarea>
           <button type="submit">Add review</button>
+        </form>
+        <form id="car-form">
+          <label for="car-name">Car Name:</label>
+          <textarea id="car-name"></textarea>
+          <label for="car-description">Car Description:</label>
+          <textarea id="car-description"></textarea>
+          <label for="car-image">Car Image:</label>
+          <textarea id="car-image"></textarea>
+          <label for="car-price">Car Price:</label>
+          <textarea id="car-price"></textarea>
+          <label for="username">Your Username:</label>
+          <textarea id="username"></textarea>
+          <button type="submit">Request Car</button>
         </form>
       </div>
     </main>
