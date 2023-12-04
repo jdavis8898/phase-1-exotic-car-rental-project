@@ -18,7 +18,8 @@ https://docs.google.com/document/d/1YZ5cW3FAWz4eWIUKS7Xo-G7Jy8P-wi1AcpsOmau0jfw/
 	        "status": "Available",
 	        "reviews": ["This car is so fast", "Best experience ever", "Drivers really smooth"],
 	        "8hrprice": "$1200",
-            "24hrprice": "$1300"
+            "24hrprice": "$1300",
+			"user": "admin"
         },
         {
             "id": 2,
@@ -30,7 +31,8 @@ https://docs.google.com/document/d/1YZ5cW3FAWz4eWIUKS7Xo-G7Jy8P-wi1AcpsOmau0jfw/
 	        "status": "Unvailable",
 	        "reviews": ["This car is just ok", "Was fun"],
 	        "8hrprice": "$1200",
-            "24hrprice": "$1300"
+            "24hrprice": "$1300",
+			"user": "admin"
         }
     ]
 }
