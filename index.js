@@ -1,6 +1,6 @@
 // displayCarDetails function hadil 
 
-
+const carReviewListElement = document.getElementById('review-list')
 const carImageElement = document.getElementById('car-image')
 const carNameElement = document.getElementById('car-name')
 const carDecriptionElement = document.getElementById('car-description')
@@ -18,6 +18,14 @@ function displayCarDetails(cars) {
         careighthrpriceElement.textContent = "$" + cars.eighthrprice
         cartwofourhrpriceElement.textContent = "$" + cars.twofourhrprice
     
+        carReviewListElement.innerText = ""
+
+        cars.reviews.forEach(review => {
+            liReviewElement = document.createElement('Li')
+            liReviewElement.textContent = review 
+            carReviewListElement.appendChild(liReviewElement)
+
+        })
 }
 
 // displayCarDetails(car[0])   declare in fetch
