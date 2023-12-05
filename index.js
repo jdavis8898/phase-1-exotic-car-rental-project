@@ -44,5 +44,25 @@ function addCar()
                 status: "Requested"
             }
         }
+
+        fetch(url,
+        {
+            method: "POST",
+            headers:
+            {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newCar)
+        })
+        .then(resp => 
+            {
+                if(resp.ok === true)
+                {
+                    resp.json().then(newCar =>
+                        {
+
+                        })
+                }
+            })
     })
 }
