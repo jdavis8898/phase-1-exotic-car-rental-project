@@ -17,9 +17,10 @@ function createNavBar(cars)
         {
             navImg = document.createElement("img")
             navImg.src = car.image_url
+            navImg.className = "Nav-Image"
             carList.appendChild(navImg)
 
-            navImg.addEventListner("click", () => displayDetails(car))
+            navImg.addEventListner("click", () => displayCarDetails(car))
         })
 }
 
