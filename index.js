@@ -3,13 +3,14 @@
 const carReviewListElement = document.getElementById('review-list')
 const carImageElement = document.getElementById('car-image')
 const carNameElement = document.getElementById('car-name')
-const carDecriptionElement = document.getElementById('car-description')
+const carDescriptionElement = document.getElementById('car-description')
 const carReviewElement = document.getElementById('car-review')
 const car8hrpriceElement = document.getElementById('car-price8')
 const car24hrpriceElement = document.getElementById('car-price24')
 
 const url = "http://localhost:3000/cars"
 const carList = document.querySelector("#car-list")
+const carDetails = document.querySelector(".car-details")
 
 let currentCar
 
@@ -20,7 +21,8 @@ function getCars(url)
     .then(carsData => 
         {
             createNavBar(carsData)
-            displayCarDetails(car[0])
+            displayCarDetails(carsData[0])
+            deleteCar()
         })
 }
 
@@ -29,8 +31,8 @@ function displayCarDetails(cars) {
         carImageElement.src = cars.image_url
         carNameElement.textContent = cars.name    
         carDescriptionElement.textContent = cars.description    
-        careighthrpriceElement.textContent = "$" + cars.eighthrprice
-        cartwofourhrpriceElement.textContent = "$" + cars.twofourhrprice
+        // car8hrpriceElement.textContent = "$" + cars.eighthrprice
+        // car24hrpriceElement.textContent = "$" + cars.twofourhrprice
     
         carReviewListElement.innerText = ""
 
@@ -73,15 +75,17 @@ reviewForm.addEventListener('submit', event => {
 
 function createNavBar(cars)
 {
+
+    carList.innerHTML = ""
+
     cars.forEach(car => 
         {
-            carList.innerHTML = ""
             navImg = document.createElement("img")
             navImg.src = car.image_url
             navImg.className = "Nav-Image"
             carList.appendChild(navImg)
 
-            navImg.addEventListner("click", () => displayCarDetails(car))
+            navImg.addEventListener("click", () => displayCarDetails(car))
         })
 }
 
@@ -145,7 +149,7 @@ function addCar()
         })
         .then(resp => 
             {
-                if(resp.ok === true)
+                if(resp.ok)
                 {
                     resp.json().then(newCar =>
                         {
@@ -168,7 +172,7 @@ function deleteCar()
     deleteButton.type = "submit"
     deleteButton.value = "Delete Car"
     deleteButton.style.background = "#DB1200"
-    document.body.appendChild(deleteButton)
+    carDetails.appendChild(deleteButton)
 
 
 
