@@ -5,6 +5,7 @@ const carImgInput = document.querySelector("form#car-form textarea#car-image")
 const carPrice8Input = document.querySelector("form#car-form textarea#car-price8")
 const carPrice24Input = document.querySelector("form#car-form textarea#car-price24")
 const usernameInput = document.querySelector("form#car-form textarea#username")
+let carsCopy
 
 function addCar()
 {
@@ -28,7 +29,7 @@ function addCar()
                 reviews: [],
                 eighthrprice: newCarPrice8,
                 twofourhrprice: newCarPrice24,
-                status: Available
+                status: "Available"
             }
         }
 
@@ -60,9 +61,15 @@ function addCar()
                 {
                     resp.json().then(newCar =>
                         {
-
+                            carsCopy.push(newCar)
+                            createNavBar(carsCopy)
+                            displayDetails(newCar)
                         })
-                }
+                    }
+                else
+                {
+                    alert("Error: Unable to add new car!")
+                }  
             })
     })
 }
