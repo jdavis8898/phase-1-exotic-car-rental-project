@@ -11,11 +11,10 @@
         "Absolutely my favorite!",
         "Enjoyed renting this car for my proposal!"
       ],
-      "8hrprice": "$200",
-        "24hrprice": "$500",
-      "Satus": "Available" ,
-      "user": 
-          "admin"
+      "eighthrprice": "$200",
+      "twofourhrprice": "$500",
+      "status": "Available" ,
+      "user": "admin"
     },
     {
       "id": 2,
@@ -26,11 +25,10 @@
         "Nothing can beat this car!",
         "Surprised my family with this car and they loved it!"
       ],
-      "8hrprice": "$300",
-        "24hrprice": "$600",
-      "Satus": "Available" ,
-      "user": 
-          "admin"
+      "eighthrprice": "$300",
+      "twofourhrprice": "$600",
+      "status": "Available" ,
+      "user": "admin"
     },
     {
       "id": 3,
@@ -41,11 +39,10 @@
         "I felt very special driving this car!",
         "Extraordinary, gotta say I had a blast driving this car."
       ],
-      "8hrprice": "$400",
-        "24hrprice": "$800",
-      "Satus": "Available" ,
-      "user": 
-          "admin"
+      "eighthrprice": "$400",
+      "twofourhrprice": "$800",
+      "status": "Available" ,
+      "user": "admin"
     },
     {
       "id": 4,
@@ -55,11 +52,10 @@
       "reviews": [
         "Never seen something like this car!"
       ],
-      "8hrprice": "$400",
-        "24hrprice": "$1200",
-      "Satus": "Available" ,
-      "user": 
-          "admin"
+      "eighthrprice": "$400",
+      "twofourhrprice": "$1200",
+      "status": "Available" ,
+      "user": "admin"
     },
     {
       "id": 5,
@@ -70,11 +66,10 @@
         "Rented this car for my sons birthday. It truly made his day!",
         "This car was a dream to ride! I can't believe I drove this car in town."
       ],
-      "8hrprice": "$100",
-        "24hrprice": "$300",
-      "Satus": "Available" ,
-      "user": 
-          "admin"
+      "eighthrprice": "$100",
+      "twofourhrprice": "$300",
+      "status": "Available" ,
+      "user": "admin"
     }
   ]
 }
