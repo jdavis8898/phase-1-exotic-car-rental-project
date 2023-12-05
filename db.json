@@ -1,80 +1,75 @@
 {
-    "cars": [
-      {
-        "id": 1,
-        "name": "Lamborghini Countach",
-        "description": "One of the most iconic cars. This car was by far on more bedroom walls in the 80s than it was in garages because it was just as much a pop culture icon as it was an incredible car. It had an incredible 26-year lifespan, which was thanks to the fact that the Countach was a car that kept up with everything around it.",
-        "image_url": "https://news.dupontregistry.com/wp-content/uploads/2019/07/Lamborghini-Countach-Turbo-LP400-S-Low-Body-6-of-14.jpg",
-        "reviews": [
-          "Highly recommend!",
-          "I had to ask my self, is this car even real?",
-          "Absolutely my favorite!",
-          "Enjoyed renting this car for my proposal!"
-        ],
-        "8hrprice": "$200",
-          "24hrprice": "$500",
-        "Satus": "Available" ,
-        "user": 
-            "admin"
-      },
-      {
-        "id": 2,
-        "name": "Ferrari F40",
-        "description": "Being the last car that the legendary Enzo Ferrari would ever oversee the development of, the Ferrari F40 couldn’t disappoint. And with 4.2 seconds to 60 miles per hour, a 197 mph top speed, and the ultimate street-legal race car experience for its time, the Ferrari F40 went on to be one of the most desirable Ferraris to ever exist and one of the best supercars of all time.",
-        "image_url": "https://news.dupontregistry.com/wp-content/uploads/2019/03/1992-Ferrari-F40_0.jpg",
-        "reviews": [
-          "Nothing can beat this car!",
-          "Surprised my family with this car and they loved it!"
-        ],
-        "8hrprice": "$300",
-          "24hrprice": "$600",
-        "Satus": "Available" ,
-        "user": 
-            "admin"
-      },
-      {
-        "id": 3,
-        "name": "Bugatti Veyron",
-        "description": "One could argue that the Buggati Veyron 16.4 was a car that marked the beginning of a new era for supercars, sports cars, and cars in general. Before that car was put into production, the world wouldn’t even imagine that a car with a 16-cylinder engine would be real and drivable. A world record for a 253 mph top speed later, the world was proven wrong. The Veyron has become just one of those exotic car names that everyone knows.",
-        "image_url": "https://news.dupontregistry.com/wp-content/uploads/2019/08/2008-Bugatti-Veyron-21.jpg",
-        "reviews": [
-          "I felt very special driving this car!",
-          "Extraordinary, gotta say I had a blast driving this car."
-        ],
-        "8hrprice": "$400",
-          "24hrprice": "$800",
-        "Satus": "Available" ,
-        "user": 
-            "admin"
-      },
-      {
-        "id": 4,
-        "name": "McLaren Senna",
-        "description": "Having raced for McLarens F1 team during the peak of his F1 career, the late and great Aryton Senna has an incredible legacy in the McLaren brand. That’s why when they set out to build one of the most powerful and capable track-focused cars the world had ever seen, it was him they wanted to honor. With 2.8 seconds to 60 mph and less than 10 seconds for a quarter mile, the Senna lives up to its supercar name.",
-        "image_url": "https://news.dupontregistry.com/wp-content/uploads/2020/01/2019-McLaren-Senna-3-1536x1024.jpg",
-        "reviews": [
-          "Never seen something like this car!"
-        ],
-        "8hrprice": "$400",
-          "24hrprice": "$1200",
-        "Satus": "Available" ,
-        "user": 
-            "admin"
-      },
-      {
-        "id": 5,
-        "name": "Ferrari F50",
-        "description": "Ferraris mid 90s flagship model wasnt just known for its dramatic styling, it was a car that started some serious drama on the asphalt, too. Its 512 horsepower, F1-derived V12 packed a serious punch, resulting in figures like a 3.8 second 0-60 mph, and a 202 mph top speed, which for today are impressive, and for the 90s, are simply insane.",
-        "image_url": "https://news.dupontregistry.com/wp-content/uploads/2016/09/Velocity-F50-feature.jpg",
-        "reviews": [
-          "Rented this car for my sons birthday. It truly made his day!",
-          "This car was a dream to ride! I can't believe I drove this car in town."
-        ],
-        "8hrprice": "$100",
-          "24hrprice": "$300",
-        "Satus": "Available" ,
-        "user": 
-            "admin"
-      }
-    ]
+  "cars": [
+    {
+      "id": 1,
+      "name": "Lamborghini Countach",
+      "description": "One of the most iconic cars. This car was by far on more bedroom walls in the 80s than it was in garages because it was just as much a pop culture icon as it was an incredible car. It had an incredible 26-year lifespan, which was thanks to the fact that the Countach was a car that kept up with everything around it.",
+      "image_url": "https://news.dupontregistry.com/wp-content/uploads/2019/07/Lamborghini-Countach-Turbo-LP400-S-Low-Body-6-of-14.jpg",
+      "reviews": [
+        "Highly recommend!",
+        "I had to ask my self, is this car even real?",
+        "Absolutely my favorite!",
+        "Enjoyed renting this car for my proposal!"
+      ],
+      "eighthrprice": "$200",
+      "twofourhrprice": "$500",
+      "status": "Available" ,
+      "user": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Ferrari F40",
+      "description": "Being the last car that the legendary Enzo Ferrari would ever oversee the development of, the Ferrari F40 couldn’t disappoint. And with 4.2 seconds to 60 miles per hour, a 197 mph top speed, and the ultimate street-legal race car experience for its time, the Ferrari F40 went on to be one of the most desirable Ferraris to ever exist and one of the best supercars of all time.",
+      "image_url": "https://news.dupontregistry.com/wp-content/uploads/2019/03/1992-Ferrari-F40_0.jpg",
+      "reviews": [
+        "Nothing can beat this car!",
+        "Surprised my family with this car and they loved it!"
+      ],
+      "eighthrprice": "$300",
+      "twofourhrprice": "$600",
+      "status": "Available" ,
+      "user": "admin"
+    },
+    {
+      "id": 3,
+      "name": "Bugatti Veyron",
+      "description": "One could argue that the Buggati Veyron 16.4 was a car that marked the beginning of a new era for supercars, sports cars, and cars in general. Before that car was put into production, the world wouldn’t even imagine that a car with a 16-cylinder engine would be real and drivable. A world record for a 253 mph top speed later, the world was proven wrong. The Veyron has become just one of those exotic car names that everyone knows.",
+      "image_url": "https://news.dupontregistry.com/wp-content/uploads/2019/08/2008-Bugatti-Veyron-21.jpg",
+      "reviews": [
+        "I felt very special driving this car!",
+        "Extraordinary, gotta say I had a blast driving this car."
+      ],
+      "eighthrprice": "$400",
+      "twofourhrprice": "$800",
+      "status": "Available" ,
+      "user": "admin"
+    },
+    {
+      "id": 4,
+      "name": "McLaren Senna",
+      "description": "Having raced for McLarens F1 team during the peak of his F1 career, the late and great Aryton Senna has an incredible legacy in the McLaren brand. That’s why when they set out to build one of the most powerful and capable track-focused cars the world had ever seen, it was him they wanted to honor. With 2.8 seconds to 60 mph and less than 10 seconds for a quarter mile, the Senna lives up to its supercar name.",
+      "image_url": "https://news.dupontregistry.com/wp-content/uploads/2020/01/2019-McLaren-Senna-3-1536x1024.jpg",
+      "reviews": [
+        "Never seen something like this car!"
+      ],
+      "eighthrprice": "$400",
+      "twofourhrprice": "$1200",
+      "status": "Available" ,
+      "user": "admin"
+    },
+    {
+      "id": 5,
+      "name": "Ferrari F50",
+      "description": "Ferraris mid 90s flagship model wasnt just known for its dramatic styling, it was a car that started some serious drama on the asphalt, too. Its 512 horsepower, F1-derived V12 packed a serious punch, resulting in figures like a 3.8 second 0-60 mph, and a 202 mph top speed, which for today are impressive, and for the 90s, are simply insane.",
+      "image_url": "https://news.dupontregistry.com/wp-content/uploads/2016/09/Velocity-F50-feature.jpg",
+      "reviews": [
+        "Rented this car for my sons birthday. It truly made his day!",
+        "This car was a dream to ride! I can't believe I drove this car in town."
+      ],
+      "eighthrprice": "$100",
+      "twofourhrprice": "$300",
+      "status": "Available" ,
+      "user": "admin"
+    }
+  ]
 }
