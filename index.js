@@ -9,7 +9,7 @@ const carReviewElement = document.getElementById('car-review')
 const car8hrpriceElement = document.getElementById('eight-hour')
 const car24hrpriceElement = document.getElementById('twofour-hour')
 const carDetailAvailableElement = document.getElementById('available')
-const differentPrices = document.querySelectorAll('details')
+const detailPrices = document.querySelectorAll('details')
 
 
 // Variables mainly used for addCar()
@@ -80,8 +80,8 @@ function displayCarDetails(cars) {
     const twofourSumElement = document.createElement('summary')
     twofourSumElement.textContent = cars.twofourhrprice
     car24hrpriceElement.appendChild(twofourSumElement)
-    differentPrices.forEach(price => {
-        price.addEventListener('toggle', togglePrices()) 
+    detailPrices.forEach(price => {
+        price.addEventListener('toggle', togglePrices) 
     })
     carDetailAvailableElement.innerText = cars.available ? "Available" : "Unavailable"; 
 
@@ -98,16 +98,16 @@ function displayCarDetails(cars) {
 
 function toggleAvailableButton() {
             
-carDetailAvailableElement.addEventListener("click", () => {
-     currentCar.available = !currentCar.available
-     carDetailAvailableElement.textContent = currentCar.available? "Available": "Unavailable";
+    carDetailAvailableElement.addEventListener("click", () => {
+      currentCar.available = !currentCar.available
+      carDetailAvailableElement.textContent = currentCar.available? "Available": "Unavailable";
    })
 
 } 
 
 function differentPrices(e) {
-const item = document.querySelector(`[data-id=${e.target.id}]`)
-item.toggleAttribute("hidden")
+    const item = document.querySelector(`[data-id=${e.target.id}]`)
+    item.toggleAttribute("hidden")
 }
 
 
