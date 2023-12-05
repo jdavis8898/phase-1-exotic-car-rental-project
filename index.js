@@ -67,23 +67,49 @@ function createNavBar(cars)
 }
 
 function displayCarDetails(cars) {
-        currentCar = cars
-        reviewListCopy = cars.reviews
-        carImageElement.src = cars.image_url
-        carNameElement.textContent = cars.name    
-        carDescriptionElement.textContent = cars.description    
-        // car8hrpriceElement.textContent = "$" + cars.eighthrprice
-        // car24hrpriceElement.textContent = "$" + cars.twofourhrprice
+    currentCar = cars
+    reviewListCopy = cars.reviews
+    carImageElement.src = cars.image_url
+    carNameElement.textContent = cars.name    
+    carDescriptionElement.textContent = cars.description 
     
-        carReviewListElement.innerText = ""
+    const eightSumElement = document.createElement('summary')
+    eightSumElement.textContent = cars.eighthrprice
+    car8hrpriceElement.appendChild(eightSumElement)
 
-        cars.reviews.forEach(review => {
-            liReviewElement = document.createElement('Li')
-            liReviewElement.textContent = review 
-            carReviewListElement.appendChild(liReviewElement)
+    const twofourSumElement = document.createElement('summary')
+    twofourSumElement.textContent = cars.twofourhrprice
+    car24hrpriceElement.appendChild(twofourSumElement)
+    differentPrices.forEach(price => {
+        price.addEventListener('toggle', togglePrices()) 
+    })
+    carDetailAvailableElement.innerText = cars.available ? "Available" : "Unavailable"; 
 
-        })
+    carReviewListElement.innerText = ""
+
+    cars.reviews.forEach(review => {
+        liReviewElement = document.createElement('Li')
+        liReviewElement.textContent = review 
+        carReviewListElement.appendChild(liReviewElement)
+
+    })
+
+}   
+
+function toggleAvailableButton() {
+            
+carDetailAvailableElement.addEventListener("click", () => {
+     currentCar.available = !currentCar.available
+     carDetailAvailableElement.textContent = currentCar.available? "Available": "Unavailable";
+   })
+
+} 
+
+function differentPrices(e) {
+const item = document.querySelector(`[data-id=${e.target.id}]`)
+item.toggleAttribute("hidden")
 }
+
 
 
 // Event listener for the review form submission
