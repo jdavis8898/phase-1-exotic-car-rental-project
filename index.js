@@ -15,6 +15,7 @@ function createNavBar(cars)
 {
     cars.forEach(car => 
         {
+            carList.innerHTML = ""
             navImg = document.createElement("img")
             navImg.src = car.image_url
             navImg.className = "Nav-Image"
