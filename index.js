@@ -6,8 +6,11 @@ const carImageElement = document.getElementById('car-image')
 const carNameElement = document.getElementById('car-name')
 const carDescriptionElement = document.getElementById('car-description')
 const carReviewElement = document.getElementById('car-review')
-const car8hrpriceElement = document.getElementById('car-price8')
-const car24hrpriceElement = document.getElementById('car-price24')
+const car8hrpriceElement = document.getElementById('eighthr-price')
+const car24hrpriceElement = document.getElementById('twofour-price')
+const carDetailAvailableElement = document.getElementById('available')
+const differentPrices = document.querySelectorAll('details')
+
 
 // Variables mainly used for addCar()
 const carForm = document.querySelector("div.car-details form#car-form")
