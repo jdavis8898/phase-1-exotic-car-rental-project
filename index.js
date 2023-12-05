@@ -2,27 +2,25 @@
 
 // Event listener for the review form submission
 const reviewForm = document.getElementById('review-form')
-
+const reviewInput = document.getElementById('review')
 
 reviewForm.addEventListener('submit', event => {
     // Prevent the form from submitting
     event.preventDefault()
+
+    reviewListCopy.push(reviewInput.value)
+
+    fetch(`http://localhost:3000/cars/${currentCar.id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json", 
+        },
+        body: JSON.stringify({ review: reviewListCopy }),
+    })
     
-    const reviewInput = document.getElementById('review')
-    const review = reviewInput.value.trim()
-    const reviewList = document.getElementById('review-list')
-
-
-    if (review) {
-        const reviewItem = document.createElement('li')
-        reviewItem.textContent = review
-        document.getElementById('review-list').appendChild(reviewItem)
-        reviewInput.value = '';
-
-
-        reviewItem.addEventListener('click', () => {
-            reviewList.removeChild(reviewItem)
-        });  
-    }
+   .then(res => res.json())
+   .then(updatedCar => {
+        displayCarDetails(updatedCar)
+   })
 
 });
