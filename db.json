@@ -12,19 +12,32 @@
           "Enjoyed renting this car for my proposal!"
         ],
 <<<<<<< HEAD
+<<<<<<< HEAD
         "8hrprice": "$200",
           "24hrprice": "$500",
         "Satus": "Available" ,
         "user": 
             "admin"
 =======
+=======
+>>>>>>> 1c96be8 (save changes)
 <<<<<<< HEAD
         "user": "admin"
 =======
         "user": 
             "admin"
 >>>>>>> 3677c91 (save changes)
+<<<<<<< HEAD
 >>>>>>> e14df68 (save changes)
+=======
+=======
+        "8hrprice": "$200",
+          "24hrprice": "$500",
+        "Satus": "Available" ,
+        "user": 
+            "admin"
+>>>>>>> fe537e9 (save changes)
+>>>>>>> 1c96be8 (save changes)
       },
       {
         "id": 2,
@@ -36,19 +49,32 @@
           "Surprised my family with this car and they loved it!"
         ],
 <<<<<<< HEAD
+<<<<<<< HEAD
         "8hrprice": "$300",
           "24hrprice": "$600",
         "Satus": "Available" ,
         "user": 
             "admin"
 =======
+=======
+>>>>>>> 1c96be8 (save changes)
 <<<<<<< HEAD
         "user": "admin"
 =======
         "user": 
             "admin"
 >>>>>>> 3677c91 (save changes)
+<<<<<<< HEAD
 >>>>>>> e14df68 (save changes)
+=======
+=======
+        "8hrprice": "$300",
+          "24hrprice": "$600",
+        "Satus": "Available" ,
+        "user": 
+            "admin"
+>>>>>>> fe537e9 (save changes)
+>>>>>>> 1c96be8 (save changes)
       },
       {
         "id": 3,
@@ -60,19 +86,32 @@
           "Extraordinary, gotta say I had a blast driving this car."
         ],
 <<<<<<< HEAD
+<<<<<<< HEAD
         "8hrprice": "$400",
           "24hrprice": "$800",
         "Satus": "Available" ,
         "user": 
             "admin"
 =======
+=======
+>>>>>>> 1c96be8 (save changes)
 <<<<<<< HEAD
         "user": "admin"
 =======
         "user": 
             "admin"
 >>>>>>> 3677c91 (save changes)
+<<<<<<< HEAD
 >>>>>>> e14df68 (save changes)
+=======
+=======
+        "8hrprice": "$400",
+          "24hrprice": "$800",
+        "Satus": "Available" ,
+        "user": 
+            "admin"
+>>>>>>> fe537e9 (save changes)
+>>>>>>> 1c96be8 (save changes)
       },
       {
         "id": 4,
@@ -83,19 +122,32 @@
           "Never seen something like this car!"
         ],
 <<<<<<< HEAD
+<<<<<<< HEAD
         "8hrprice": "$400",
           "24hrprice": "$1200",
         "Satus": "Available" ,
         "user": 
             "admin"
 =======
+=======
+>>>>>>> 1c96be8 (save changes)
 <<<<<<< HEAD
         "user": "admin"
 =======
         "user": 
             "admin"
 >>>>>>> 3677c91 (save changes)
+<<<<<<< HEAD
 >>>>>>> e14df68 (save changes)
+=======
+=======
+        "8hrprice": "$400",
+          "24hrprice": "$1200",
+        "Satus": "Available" ,
+        "user": 
+            "admin"
+>>>>>>> fe537e9 (save changes)
+>>>>>>> 1c96be8 (save changes)
       },
       {
         "id": 5,
@@ -107,19 +159,32 @@
           "This car was a dream to ride! I can't believe I drove this car in town."
         ],
 <<<<<<< HEAD
+<<<<<<< HEAD
         "8hrprice": "$100",
           "24hrprice": "$300",
         "Satus": "Available" ,
         "user": 
             "admin"
 =======
+=======
+>>>>>>> 1c96be8 (save changes)
 <<<<<<< HEAD
         "user": "admin"
 =======
         "user": 
             "admin"
 >>>>>>> 3677c91 (save changes)
+<<<<<<< HEAD
 >>>>>>> e14df68 (save changes)
+=======
+=======
+        "8hrprice": "$100",
+          "24hrprice": "$300",
+        "Satus": "Available" ,
+        "user": 
+            "admin"
+>>>>>>> fe537e9 (save changes)
+>>>>>>> 1c96be8 (save changes)
       }
     ]
 }
