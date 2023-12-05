@@ -1,5 +1,5 @@
-// displayCarDetails function hadil 
 
+// displayCarDetails function hadil 
 const carReviewListElement = document.getElementById('review-list')
 const carImageElement = document.getElementById('car-image')
 const carNameElement = document.getElementById('car-name')
@@ -8,7 +8,21 @@ const carReviewElement = document.getElementById('car-review')
 const car8hrpriceElement = document.getElementById('car-price8')
 const car24hrpriceElement = document.getElementById('car-price24')
 
+const url = "http://localhost:3000/cars"
+const carList = document.querySelector("#car-list")
+
 let currentCar
+
+function getCars(url)
+{
+    fetch(url)
+    .then(resp => resp.json())
+    .then(carsData => 
+        {
+            createNavBar(carsData)
+            displayCarDetails(car[0])
+        })
+}
 
 function displayCarDetails(cars) {
         currentCar = cars
@@ -28,8 +42,6 @@ function displayCarDetails(cars) {
         })
 }
 
-// displayCarDetails(car[0])   declare in fetch
-// - hadil add review code here
 
 // Event listener for the review form submission
 const reviewForm = document.getElementById('review-form')
@@ -58,18 +70,6 @@ reviewForm.addEventListener('submit', event => {
 
 });
 
-const url = "http://localhost:3000/cars"
-const carList = document.querySelector("#car-list")
-
-function getCars(url)
-{
-    fetch(url)
-    .then(resp => resp.json())
-    .then(carsData => 
-        {
-            createNavBar(carsData)
-        })
-}
 
 function createNavBar(cars)
 {
@@ -85,7 +85,7 @@ function createNavBar(cars)
         })
 }
 
-getCars(url)
+
 const carForm = document.querySelector("div.car-details form#car-form")
 const carNameInput = document.querySelector("form#car-form textarea#car-name")
 const carDescriptionInput = document.querySelector("form#car-form textarea#car-description")
@@ -160,7 +160,9 @@ function addCar()
                 }  
             })
     })
-}function deleteCar()
+}
+
+function deleteCar()
 {
     const deleteButton = document.createElement("input")
     deleteButton.type = "submit"
@@ -196,3 +198,5 @@ function addCar()
             })
     })
 }
+
+getCars(url)
