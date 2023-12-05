@@ -13,7 +13,7 @@
       ],
       "eighthrprice": "$200",
       "twofourhrprice": "$500",
-      "status": "Available",
+      "status": "Available" ,
       "user": "admin"
     },
     {
@@ -27,7 +27,7 @@
       ],
       "eighthrprice": "$300",
       "twofourhrprice": "$600",
-      "status": "Available",
+      "status": "Available" ,
       "user": "admin"
     },
     {
@@ -41,7 +41,7 @@
       ],
       "eighthrprice": "$400",
       "twofourhrprice": "$800",
-      "status": "Available",
+      "status": "Available" ,
       "user": "admin"
     },
     {
@@ -54,7 +54,7 @@
       ],
       "eighthrprice": "$400",
       "twofourhrprice": "$1200",
-      "status": "Available",
+      "status": "Available" ,
       "user": "admin"
     },
     {
@@ -68,7 +68,7 @@
       ],
       "eighthrprice": "$100",
       "twofourhrprice": "$300",
-      "status": "Available",
+      "status": "Available" ,
       "user": "admin"
     }
   ]
