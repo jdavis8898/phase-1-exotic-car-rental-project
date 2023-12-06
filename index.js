@@ -1,5 +1,6 @@
+const url = "http://localhost:3000/cars"
 
-// displayCarDetails function hadil 
+// Variables mainly used for displayCarDetails()
 const carReviewListElement = document.getElementById('review-list')
 const carImageElement = document.getElementById('car-image')
 const carNameElement = document.getElementById('car-name')
@@ -8,11 +9,28 @@ const carReviewElement = document.getElementById('car-review')
 const car8hrpriceElement = document.getElementById('car-price8')
 const car24hrpriceElement = document.getElementById('car-price24')
 
-const url = "http://localhost:3000/cars"
+// Variables mainly used for addCar()
+const carForm = document.querySelector("div.car-details form#car-form")
+const carNameInput = document.querySelector("form#car-form textarea#car-name")
+const carDescriptionInput = document.querySelector("form#car-form textarea#car-description")
+const carImgInput = document.querySelector("form#car-form textarea#car-image")
+// const carPrice8Input = document.querySelector("form#car-form textarea#car-price8")
+// const carPrice24Input = document.querySelector("form#car-form textarea#car-price24")
+const usernameInput = document.querySelector("form#car-form textarea#username")
+
+// Variables mainly used for createNavBar()
 const carList = document.querySelector("#car-list")
+
+// Variables mainly used for deleteCar()
 const carDetails = document.querySelector(".car-details")
 
+// Variables mainly used for addReview()
+const reviewForm = document.getElementById('review-form')
+const reviewInput = document.getElementById('review')
+
 let currentCar
+let carsCopy
+let reviewListCopy
 
 function getCars(url)
 {
@@ -20,14 +38,34 @@ function getCars(url)
     .then(resp => resp.json())
     .then(carsData => 
         {
+            carsCopy = carsData
             createNavBar(carsData)
             displayCarDetails(carsData[0])
+            addReview()
+            addCar()
             deleteCar()
+        })
+}
+
+function createNavBar(cars)
+{
+
+    carList.innerHTML = ""
+
+    cars.forEach(car => 
+        {
+            navImg = document.createElement("img")
+            navImg.src = car.image_url
+            navImg.className = "Nav-Image"
+            carList.appendChild(navImg)
+
+            navImg.addEventListener("click", () => displayCarDetails(car))
         })
 }
 
 function displayCarDetails(cars) {
         currentCar = cars
+        reviewListCopy = cars.reviews
         carImageElement.src = cars.image_url
         carNameElement.textContent = cars.name    
         carDescriptionElement.textContent = cars.description    
@@ -46,58 +84,39 @@ function displayCarDetails(cars) {
 
 
 // Event listener for the review form submission
-const reviewForm = document.getElementById('review-form')
-
-
-reviewForm.addEventListener('submit', event => {
-    // Prevent the form from submitting
-    event.preventDefault()
-    
-    const reviewInput = document.getElementById('review')
-    const review = reviewInput.value.trim()
-    const reviewList = document.getElementById('review-list')
-
-
-    if (review) {
-        const reviewItem = document.createElement('li')
-        reviewItem.textContent = review
-        document.getElementById('review-list').appendChild(reviewItem)
-        reviewInput.value = '';
-
-
-        reviewItem.addEventListener('click', () => {
-            reviewList.removeChild(reviewItem)
-        });  
-    }
-
-});
-
-
-function createNavBar(cars)
+function addReview()
 {
 
-    carList.innerHTML = ""
+    reviewForm.addEventListener('submit', event => {
+        // Prevent the form from submitting
+        event.preventDefault()
 
-    cars.forEach(car => 
-        {
-            navImg = document.createElement("img")
-            navImg.src = car.image_url
-            navImg.className = "Nav-Image"
-            carList.appendChild(navImg)
+        reviewListCopy.push(reviewInput.value)
 
-            navImg.addEventListener("click", () => displayCarDetails(car))
+        fetch(`http://localhost:3000/cars/${currentCar.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json", 
+            },
+            body: JSON.stringify({ reviews: reviewListCopy }),
         })
+    
+        .then(res => res.json())
+        .then(updatedCar => {
+            carsCopy = carsCopy.map(car => {
+                if(car.name === updatedCar.name){
+                    return updatedCar
+                }
+                else{
+                    return car
+                }
+            })
+            displayCarDetails(updatedCar)
+            createNavBar(carsCopy)
+        })
+        reviewInput.value = ""
+    })
 }
-
-
-const carForm = document.querySelector("div.car-details form#car-form")
-const carNameInput = document.querySelector("form#car-form textarea#car-name")
-const carDescriptionInput = document.querySelector("form#car-form textarea#car-description")
-const carImgInput = document.querySelector("form#car-form textarea#car-image")
-const carPrice8Input = document.querySelector("form#car-form textarea#car-price8")
-const carPrice24Input = document.querySelector("form#car-form textarea#car-price24")
-const usernameInput = document.querySelector("form#car-form textarea#username")
-let carsCopy
 
 function addCar()
 {
@@ -108,20 +127,22 @@ function addCar()
         newCarName = carNameInput.value
         newCarDescription = carDescriptionInput.value
         newCarImg = carImgInput.value
-        newCarPrice8 = carPrice8Input.value
-        newCarPrice24 = carPrice24Input.value
-        newUsername = usernameInput.value
+        // newCarPrice8 = carPrice8Input.value
+        // newCarPrice24 = carPrice24Input.value
+        newUser = usernameInput.value
 
-        if(newUsername.lowercase() === "admin")
+        if(newUser.toLowerCase() === "admin")
         {
+
             newCar = {
                 name: newCarName,
                 description: newCarDescription,
                 image_url: newCarImg,
                 reviews: [],
-                eighthrprice: newCarPrice8,
-                twofourhrprice: newCarPrice24,
-                status: "Available"
+                eighthrprice: "$200",
+                twofourhrprice: "$500",
+                status: "Available",
+                user: newUser
             }
         }
 
@@ -134,7 +155,8 @@ function addCar()
                 reviews: [],
                 eighthrprice: "Requested",
                 twofourhrprice: "Requested",
-                status: "Requested"
+                status: "Requested",
+                user: newUser
             }
         }
 
@@ -155,7 +177,7 @@ function addCar()
                         {
                             carsCopy.push(newCar)
                             createNavBar(carsCopy)
-                            displayDetails(newCar)
+                            displayCarDetails(newCar)
                         })
                     }
                 else
@@ -163,6 +185,8 @@ function addCar()
                     alert("Error: Unable to add new car!")
                 }  
             })
+
+        carForm.reset()
     })
 }
 
@@ -178,28 +202,38 @@ function deleteCar()
 
     deleteButton.addEventListener("click", () => 
     {
-        fetch(`${url}/${currentCar.id}`, 
+        if(usernameInput.value.toLowerCase() === currentCar.user)
         {
-            method: "DELETE"
-        })
-        .then(resp => 
+            fetch(`${url}/${currentCar.id}`, 
             {
-                if(resp.ok)
-                {
-                    carsCopy = carsCopy.filter(car => 
-                        {
-                            return currentCar.id !== car.id
-                        })
-                    displayCarDetails(carsCopy[0])
-                    createNavBar(carsCopy)
-                    alert("Car deleted!")
-                }
-
-                else
-                {
-                    alert("Error: Unable to delete car!")
-                }
+                method: "DELETE"
             })
+            .then(resp => 
+                {
+                    if(resp.ok)
+                    {
+                        carsCopy = carsCopy.filter(car => 
+                            {
+                                return currentCar.id !== car.id
+                            })
+                        displayCarDetails(carsCopy[0])
+                        createNavBar(carsCopy)
+                        alert("Car deleted!")
+                    }
+
+                    else
+                    {
+                        alert("Error: Unable to delete car!")
+                    }
+            })
+        }
+        
+        else
+        {
+            alert("Error: Incorrect username!  Please try again!")
+        }
+
+    carForm.reset()
     })
 }
 

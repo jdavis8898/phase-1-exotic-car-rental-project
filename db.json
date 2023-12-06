@@ -13,7 +13,7 @@
       ],
       "eighthrprice": "$200",
       "twofourhrprice": "$500",
-      "status": "Available",
+      "status": "Available" ,
       "user": "admin"
     },
     {
@@ -27,7 +27,7 @@
       ],
       "eighthrprice": "$300",
       "twofourhrprice": "$600",
-      "status": "Available",
+      "status": "Available" ,
       "user": "admin"
     },
     {
@@ -41,7 +41,7 @@
       ],
       "eighthrprice": "$400",
       "twofourhrprice": "$800",
-      "status": "Available",
+      "status": "Available" ,
       "user": "admin"
     },
     {
@@ -54,7 +54,21 @@
       ],
       "eighthrprice": "$400",
       "twofourhrprice": "$1200",
-      "status": "Available",
+      "status": "Available" ,
+      "user": "admin"
+    },
+    {
+      "id": 5,
+      "name": "Ferrari F50",
+      "description": "Ferraris mid 90s flagship model wasnt just known for its dramatic styling, it was a car that started some serious drama on the asphalt, too. Its 512 horsepower, F1-derived V12 packed a serious punch, resulting in figures like a 3.8 second 0-60 mph, and a 202 mph top speed, which for today are impressive, and for the 90s, are simply insane.",
+      "image_url": "https://news.dupontregistry.com/wp-content/uploads/2016/09/Velocity-F50-feature.jpg",
+      "reviews": [
+        "Rented this car for my sons birthday. It truly made his day!",
+        "This car was a dream to ride! I can't believe I drove this car in town."
+      ],
+      "eighthrprice": "$100",
+      "twofourhrprice": "$300",
+      "status": "Available" ,
       "user": "admin"
     }
   ]
