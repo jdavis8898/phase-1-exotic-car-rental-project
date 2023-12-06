@@ -16,20 +16,21 @@ function addCar()
         newCarName = carNameInput.value
         newCarDescription = carDescriptionInput.value
         newCarImg = carImgInput.value
-        newCarPrice8 = carPrice8Input.value
-        newCarPrice24 = carPrice24Input.value
-        newUsername = usernameInput.value
+        // newCarPrice8 = carPrice8Input.value
+        // newCarPrice24 = carPrice24Input.value
+        newUser = usernameInput.value
 
-        if(newUsername.lowercase() === "admin")
+        if(newUser.toLowerCase() === "admin")
         {
             newCar = {
                 name: newCarName,
                 description: newCarDescription,
                 image_url: newCarImg,
                 reviews: [],
-                eighthrprice: newCarPrice8,
-                twofourhrprice: newCarPrice24,
-                status: "Available"
+                eighthrprice: "$200",
+                twofourhrprice: "$500",
+                status: "Available",
+                user: newUSer
             }
         }
 
@@ -42,7 +43,8 @@ function addCar()
                 reviews: [],
                 eighthrprice: "Requested",
                 twofourhrprice: "Requested",
-                status: "Requested"
+                status: "Requested",
+                user: newUser
             }
         }
 
@@ -57,13 +59,13 @@ function addCar()
         })
         .then(resp => 
             {
-                if(resp.ok === true)
+                if(resp.ok)
                 {
                     resp.json().then(newCar =>
                         {
                             carsCopy.push(newCar)
                             createNavBar(carsCopy)
-                            displayDetails(newCar)
+                            displayCarDetails(newCar)
                         })
                     }
                 else
@@ -71,5 +73,6 @@ function addCar()
                     alert("Error: Unable to add new car!")
                 }  
             })
+            carForm.reset()
     })
 }
