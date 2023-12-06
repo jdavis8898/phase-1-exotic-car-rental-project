@@ -11,8 +11,8 @@
         "Absolutely my favorite!",
         "Enjoyed renting this car for my proposal!"
       ],
-      "eighthrprice": "$200",
-      "twofourhrprice": "$500",
+      "eighthrprice": "200",
+      "twofourhrprice": "500",
       "status": true,
       "user": "admin"
     },
@@ -25,8 +25,8 @@
         "Nothing can beat this car!",
         "Surprised my family with this car and they loved it!"
       ],
-      "eighthrprice": "$300",
-      "twofourhrprice": "$600",
+      "eighthrprice": "300",
+      "twofourhrprice": "600",
       "status": true,
       "user": "admin"
     },
@@ -39,8 +39,8 @@
         "I felt very special driving this car!",
         "Extraordinary, gotta say I had a blast driving this car."
       ],
-      "eighthrprice": "$400",
-      "twofourhrprice": "$800",
+      "eighthrprice": "400",
+      "twofourhrprice": "800",
       "status": true,
       "user": "admin"
     },
@@ -52,8 +52,8 @@
       "reviews": [
         "Never seen something like this car!"
       ],
-      "eighthrprice": "$400",
-      "twofourhrprice": "$1200",
+      "eighthrprice": "400",
+      "twofourhrprice": "1200",
       "status": true,
       "user": "admin"
     },
@@ -66,8 +66,8 @@
         "Rented this car for my sons birthday. It truly made his day!",
         "This car was a dream to ride! I can't believe I drove this car in town."
       ],
-      "eighthrprice": "$100",
-      "twofourhrprice": "$300",
+      "eighthrprice": "100",
+      "twofourhrprice": "300",
       "status": true,
       "user": "admin"
     }

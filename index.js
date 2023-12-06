@@ -71,22 +71,47 @@ function displayCarDetails(cars) {
     reviewListCopy = cars.reviews
     carImageElement.src = cars.image_url
     carNameElement.textContent = cars.name    
-    carDescriptionElement.textContent = cars.description 
+    carDescriptionElement.innerText = cars.description 
     
-    const eightSumElement = document.createElement('summary')
-    eightSumElement.textContent = cars.eighthrprice
-    car8hrpriceElement.appendChild(eightSumElement)
+    // Displaying Prices
+    if(document.getElementById("price-8") === null)
+    {
+        const eightHrPEl = document.createElement("p")
+        eightHrPEl.setAttribute("id", "price-8")
+        eightHrPEl.textContent = "$" + cars.eighthrprice
+        car8hrpriceElement.appendChild(eightHrPEl)
 
-    const twofourSumElement = document.createElement('summary')
-    twofourSumElement.textContent = cars.twofourhrprice
-    car24hrpriceElement.appendChild(twofourSumElement)
+        const twofourHrPEl = document.createElement("p")
+        twofourHrPEl.setAttribute("id", "price-24")
+        twofourHrPEl.textContent = "$" + cars.twofourhrprice
+        car24hrpriceElement.appendChild(twofourHrPEl)
+    }
+
+    else
+    {
+        document.getElementById("price-8").remove()
+        const eightHrPEl = document.createElement("p")
+        eightHrPEl.setAttribute("id", "price-8")
+        eightHrPEl.textContent = "$" + cars.eighthrprice
+        car8hrpriceElement.appendChild(eightHrPEl)
+
+        document.getElementById("price-24").remove()
+        const twofourHrPEl = document.createElement("p")
+        twofourHrPEl.setAttribute("id", "price-24")
+        twofourHrPEl.textContent = "$" + cars.twofourhrprice
+        car24hrpriceElement.appendChild(twofourHrPEl)
+
+    }
+
     detailPrices.forEach(price => {
         price.addEventListener('toggle', togglePrices) 
     })
+
+    // Display available or not
     carDetailAvailableElement.innerText = cars.available ? "Available" : "Unavailable"; 
 
+    // Displaying Reviews
     carReviewListElement.innerText = ""
-
     cars.reviews.forEach(review => {
         liReviewElement = document.createElement('Li')
         liReviewElement.textContent = review 
@@ -105,7 +130,7 @@ function toggleAvailableButton() {
 
 } 
 
-function differentPrices(e) {
+function togglePrices(e) {
     const item = document.querySelector(`[data-id=${e.target.id}]`)
     item.toggleAttribute("hidden")
 }
@@ -168,8 +193,8 @@ function addCar()
                 description: newCarDescription,
                 image_url: newCarImg,
                 reviews: [],
-                eighthrprice: "$200",
-                twofourhrprice: "$500",
+                eighthrprice: "200",
+                twofourhrprice: "500",
                 status: "Available",
                 user: newUser
             }
