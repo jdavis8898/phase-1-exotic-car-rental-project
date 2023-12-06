@@ -91,7 +91,6 @@ function displayCarDetails(cars) {
         price.addEventListener('toggle', e => 
         {
             const item = document.querySelector(`[data-id=${e.target.id}]`)
-            console.log(document.querySelector(`[data-id=${e.target.id}]`))
             item.toggleAttribute("hidden")
         })
     })
