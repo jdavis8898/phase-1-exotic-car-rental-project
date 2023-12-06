@@ -13,15 +13,15 @@ function getCars(url)
 
 function createNavBar(cars)
 {
+    carList.innerHTML = ""
     cars.forEach(car => 
         {
-            carList.innerHTML = ""
             navImg = document.createElement("img")
             navImg.src = car.image_url
             navImg.className = "Nav-Image"
             carList.appendChild(navImg)
 
-            navImg.addEventListner("click", () => displayCarDetails(car))
+            navImg.addEventListener("click", () => displayCarDetails(car))
         })
 }
 
