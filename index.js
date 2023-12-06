@@ -12,11 +12,12 @@ let currentCar
 
 function displayCarDetails(cars) {
         currentCar = cars
+        reviewListCopy = cars.reviews
         carImageElement.src = cars.image_url
         carNameElement.textContent = cars.name    
         carDescriptionElement.textContent = cars.description    
-        careighthrpriceElement.textContent = "$" + cars.eighthrprice
-        cartwofourhrpriceElement.textContent = "$" + cars.twofourhrprice
+        // careighthrpriceElement.textContent = "$" + cars.eighthrprice
+        // cartwofourhrpriceElement.textContent = "$" + cars.twofourhrprice
     
         carReviewListElement.innerText = ""
 
