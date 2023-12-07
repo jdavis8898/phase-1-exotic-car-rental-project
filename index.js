@@ -158,22 +158,24 @@ function addReview()
     reviewForm.addEventListener('submit', event => {
         // Prevent the form from submitting
         event.preventDefault()
+        if(reviewInput.value.length > 0)
+        {
+            reviewListCopy.push(reviewInput.value)
 
-        reviewListCopy.push(reviewInput.value)
-
-        fetch(`http://localhost:3000/cars/${currentCar.id}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json", 
-            },
-            body: JSON.stringify({ reviews: reviewListCopy })
-        })
-        .then(res => res.json())
-        .then(updatedCar => 
-            {
-            postPatchUpdate(updatedCar)
+            fetch(`http://localhost:3000/cars/${currentCar.id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json", 
+                },
+                body: JSON.stringify({ reviews: reviewListCopy })
             })
-        reviewInput.value = ""
+            .then(res => res.json())
+            .then(updatedCar => 
+                {
+                postPatchUpdate(updatedCar)
+                })
+            reviewInput.value = ""
+        }
     })
 }
 
@@ -296,30 +298,34 @@ function deleteCar()
 
 function deleteReview(delReview)
 {
-    reviewListCopy = currentCar.reviews.filter(review => 
-        {
-            return review !== delReview
-        })
-
-    fetch(`${url}/${currentCar.id}`, 
+    if(usernameInput.value.length > 0)
     {
-        method: "PATCH",
-        headers: 
-        {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(
+        console.log("work?")
+        reviewListCopy = currentCar.reviews.filter(review => 
             {
-                reviews: reviewListCopy
-            }
-        )
-    })
-    .then(resp => resp.json())
-    .then(updatedCar => 
-    {
-        postPatchUpdate(updatedCar)
-    })
+                return review !== delReview
+            })
 
+        fetch(`${url}/${currentCar.id}`, 
+        {
+            method: "PATCH",
+            headers: 
+            {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(
+                {
+                    reviews: reviewListCopy
+                }
+            )
+        })
+        .then(resp => resp.json())
+        .then(updatedCar => 
+        {
+            postPatchUpdate(updatedCar)
+        })
+    }
+    carForm.reset()
 }
 
 function updatePageInfo(car, carList)
