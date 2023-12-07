@@ -300,7 +300,6 @@ function deleteReview(delReview)
 {
     if(usernameInput.value.length > 0)
     {
-        console.log("work?")
         reviewListCopy = currentCar.reviews.filter(review => 
             {
                 return review !== delReview
