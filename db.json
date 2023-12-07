@@ -40,7 +40,7 @@
       ],
       "eighthrprice": "400",
       "twofourhrprice": "800",
-      "status": true,
+      "status": false,
       "user": "admin"
     },
     {
