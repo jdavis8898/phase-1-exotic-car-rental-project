@@ -77,6 +77,7 @@ function displayCarDetails(cars) {
     // Displaying Prices
     if(document.getElementById("price-8") === null)
     {
+        // createPriceElements()
         const eightHrPEl = document.createElement("p")
         eightHrPEl.setAttribute("id", "price-8")
         eightHrPEl.textContent = "$" + cars.eighthrprice
@@ -101,7 +102,7 @@ function displayCarDetails(cars) {
         twofourHrPEl.setAttribute("id", "price-24")
         twofourHrPEl.textContent = "$" + cars.twofourhrprice
         car24hrpriceElement.appendChild(twofourHrPEl)
-
+        // createPriceElements()
     }
 
     detailPrices.forEach(price => {
@@ -348,6 +349,19 @@ function postPatchUpdate(updatedCar)
         }
         })
         updatePageInfo(updatedCar, carsCopy)
+}
+
+function createPriceElements()
+{
+    const eightHrPEl = document.createElement("p")
+    eightHrPEl.setAttribute("id", "price-8")
+    eightHrPEl.textContent = "$" + cars.eighthrprice
+    car8hrpriceElement.appendChild(eightHrPEl)
+
+    const twofourHrPEl = document.createElement("p")
+    twofourHrPEl.setAttribute("id", "price-24")
+    twofourHrPEl.textContent = "$" + cars.twofourhrprice
+    car24hrpriceElement.appendChild(twofourHrPEl)
 }
 
 getCars(url)
