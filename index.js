@@ -91,6 +91,7 @@ function displayCarDetails(cars) {
         price.addEventListener('toggle', e => 
         {
             const item = document.querySelector(`[data-id=${e.target.id}]`)
+            console.log(document.querySelector(`[data-id=${e.target.id}]`))
             item.toggleAttribute("hidden")
         })
     })
@@ -233,12 +234,13 @@ function addCar()
             {
                 if(resp.ok)
                 {
-                    resp.json().then(newCar =>
+                    resp.json()
+                    .then(newCar =>
                         {
                             carsCopy.push(newCar)
                             updatePageInfo(newCar, carsCopy)
                         })
-                    }
+                }
                 else
                 {
                     alert("Error: Unable to add new car!")
