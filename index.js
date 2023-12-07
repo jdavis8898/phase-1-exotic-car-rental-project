@@ -77,32 +77,14 @@ function displayCarDetails(cars) {
     // Displaying Prices
     if(document.getElementById("price-8") === null)
     {
-        // createPriceElements()
-        const eightHrPEl = document.createElement("p")
-        eightHrPEl.setAttribute("id", "price-8")
-        eightHrPEl.textContent = "$" + cars.eighthrprice
-        car8hrpriceElement.appendChild(eightHrPEl)
-
-        const twofourHrPEl = document.createElement("p")
-        twofourHrPEl.setAttribute("id", "price-24")
-        twofourHrPEl.textContent = "$" + cars.twofourhrprice
-        car24hrpriceElement.appendChild(twofourHrPEl)
+        createPriceElements(cars)
     }
 
     else
     {
         document.getElementById("price-8").remove()
-        const eightHrPEl = document.createElement("p")
-        eightHrPEl.setAttribute("id", "price-8")
-        eightHrPEl.textContent = "$" + cars.eighthrprice
-        car8hrpriceElement.appendChild(eightHrPEl)
-
         document.getElementById("price-24").remove()
-        const twofourHrPEl = document.createElement("p")
-        twofourHrPEl.setAttribute("id", "price-24")
-        twofourHrPEl.textContent = "$" + cars.twofourhrprice
-        car24hrpriceElement.appendChild(twofourHrPEl)
-        // createPriceElements()
+        createPriceElements(cars)
     }
 
     detailPrices.forEach(price => {
@@ -122,7 +104,21 @@ function displayCarDetails(cars) {
         liReviewElement.addEventListener("click", () => deleteReview(review))
     })
 
-}   
+}
+
+
+function createPriceElements(car)
+{
+    const eightHrPEl = document.createElement("p")
+    eightHrPEl.setAttribute("id", "price-8")
+    eightHrPEl.textContent = "$" + car.eighthrprice
+    car8hrpriceElement.appendChild(eightHrPEl)
+
+    const twofourHrPEl = document.createElement("p")
+    twofourHrPEl.setAttribute("id", "price-24")
+    twofourHrPEl.textContent = "$" + car.twofourhrprice
+    car24hrpriceElement.appendChild(twofourHrPEl)
+}
 
 function toggleAvailableButton() {
     carDetailAvailableElement.addEventListener("click", () => {
@@ -349,19 +345,6 @@ function postPatchUpdate(updatedCar)
         }
         })
         updatePageInfo(updatedCar, carsCopy)
-}
-
-function createPriceElements()
-{
-    const eightHrPEl = document.createElement("p")
-    eightHrPEl.setAttribute("id", "price-8")
-    eightHrPEl.textContent = "$" + cars.eighthrprice
-    car8hrpriceElement.appendChild(eightHrPEl)
-
-    const twofourHrPEl = document.createElement("p")
-    twofourHrPEl.setAttribute("id", "price-24")
-    twofourHrPEl.textContent = "$" + cars.twofourhrprice
-    car24hrpriceElement.appendChild(twofourHrPEl)
 }
 
 getCars(url)
