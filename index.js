@@ -88,7 +88,11 @@ function displayCarDetails(cars) {
     }
 
     detailPrices.forEach(price => {
-        price.addEventListener('toggle', togglePrices) 
+        price.addEventListener('toggle', e => 
+        {
+            const item = document.querySelector(`[data-id=${e.target.id}]`)
+            item.toggleAttribute("hidden")
+        })
     })
 
     // Display available or not
@@ -145,11 +149,6 @@ function toggleAvailableButton() {
    })
 
 } 
-
-function togglePrices(e) {
-    const item = document.querySelector(`[data-id=${e.target.id}]`)
-    item.toggleAttribute("hidden")
-}
 
 // Event listener for the review form submission
 function addReview()
