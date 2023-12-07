@@ -91,7 +91,6 @@ function displayCarDetails(cars) {
         price.addEventListener('toggle', e => 
         {
             const item = document.querySelector(`[data-id=${e.target.id}]`)
-            console.log(document.querySelector(`[data-id=${e.target.id}]`))
             item.toggleAttribute("hidden")
         })
     })
@@ -348,6 +347,22 @@ function postPatchUpdate(updatedCar)
         }
         })
         updatePageInfo(updatedCar, carsCopy)
+}
+
+function otherModels()
+{
+    footerElement = document.createElementById("footer")
+    footerElement.innerHTML = `
+        <ul id="other-models">
+        </ul>
+    `
+
+
+}
+
+function getBrand()
+{
+
 }
 
 getCars(url)
