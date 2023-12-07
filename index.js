@@ -106,7 +106,6 @@ function displayCarDetails(cars) {
 
 }
 
-
 function createPriceElements(car)
 {
     const eightHrPEl = document.createElement("p")
@@ -151,8 +150,6 @@ function togglePrices(e) {
     const item = document.querySelector(`[data-id=${e.target.id}]`)
     item.toggleAttribute("hidden")
 }
-
-
 
 // Event listener for the review form submission
 function addReview()
