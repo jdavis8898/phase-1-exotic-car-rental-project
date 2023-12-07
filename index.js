@@ -117,6 +117,7 @@ function displayCarDetails(cars) {
         liReviewElement.textContent = review 
         carReviewListElement.appendChild(liReviewElement)
 
+        liReviewElement.addEventListener("click", () => deleteReview(review))
     })
 
 }   
@@ -134,18 +135,7 @@ function toggleAvailableButton() {
             .then(resp => resp.json())
             .then(updatedCar => 
             {
-                carsCopy = carsCopy.map(car => 
-                {
-                    if(car.name === updatedCar.name)
-                    {
-                        return updatedCar
-                    }
-                    else
-                    {
-                        return car
-                    }
-                })
-                updatePageInfo(updatedCar, carsCopy)
+                postPatchUpdate(updatedCar)
             })
         }
 
@@ -184,17 +174,10 @@ function addReview()
             body: JSON.stringify({ reviews: reviewListCopy })
         })
         .then(res => res.json())
-        .then(updatedCar => {
-            carsCopy = carsCopy.map(car => {
-                if(car.name === updatedCar.name){
-                    return updatedCar
-                }
-                else{
-                    return car
-                }
+        .then(updatedCar => 
+            {
+            postPatchUpdate(updatedCar)
             })
-            updatePageInfo(updatedCar, carsCopy)
-        })
         reviewInput.value = ""
     })
 }
@@ -316,10 +299,54 @@ function deleteCar()
     })
 }
 
+function deleteReview(delReview)
+{
+    reviewListCopy = currentCar.reviews.filter(review => 
+        {
+            return review !== delReview
+        })
+
+    fetch(`${url}/${currentCar.id}`, 
+    {
+        method: "PATCH",
+        headers: 
+        {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(
+            {
+                reviews: reviewListCopy
+            }
+        )
+    })
+    .then(resp => resp.json())
+    .then(updatedCar => 
+    {
+        postPatchUpdate(updatedCar)
+    })
+
+}
+
 function updatePageInfo(car, carList)
 {
     displayCarDetails(car)
     createNavBar(carList)
+}
+
+function postPatchUpdate(updatedCar)
+{
+    carsCopy = carsCopy.map(car => 
+    {
+        if(car.name === updatedCar.name)
+        {
+            return updatedCar
+        }
+        else
+        {
+            return car
+        }
+        })
+        updatePageInfo(updatedCar, carsCopy)
 }
 
 getCars(url)
