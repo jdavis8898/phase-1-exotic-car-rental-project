@@ -42,11 +42,11 @@ function getCars(url)
     .then(carsData => 
         {
             carsCopy = carsData
-            createNavBar(carsData)
-            displayCarDetails(carsData[0])
+            updatePageInfo(carsData[0], carsData)
             addReview()
             addCar()
             deleteCar()
+            toggleAvailableButton()
         })
 }
 
@@ -108,12 +108,12 @@ function displayCarDetails(cars) {
     })
 
     // Display available or not
-    carDetailAvailableElement.innerText = cars.available ? "Available" : "Unavailable"; 
+    carDetailAvailableElement.innerText = cars.status ? "Available" : "Unavailable"
 
     // Displaying Reviews
     carReviewListElement.innerText = ""
     cars.reviews.forEach(review => {
-        liReviewElement = document.createElement('Li')
+        liReviewElement = document.createElement('li')
         liReviewElement.textContent = review 
         carReviewListElement.appendChild(liReviewElement)
 
@@ -122,10 +122,39 @@ function displayCarDetails(cars) {
 }   
 
 function toggleAvailableButton() {
-            
     carDetailAvailableElement.addEventListener("click", () => {
-      currentCar.available = !currentCar.available
-      carDetailAvailableElement.textContent = currentCar.available? "Available": "Unavailable";
+        if(usernameInput.value.toLowerCase() === "admin")
+        {
+            fetch(`${url}/${currentCar.id}`, 
+            {
+                method: "PATCH",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({status: !currentCar.status})
+            })
+            .then(resp => resp.json())
+            .then(updatedCar => 
+            {
+                carsCopy = carsCopy.map(car => 
+                {
+                    if(car.name === updatedCar.name)
+                    {
+                        return updatedCar
+                    }
+                    else
+                    {
+                        return car
+                    }
+                })
+                updatePageInfo(updatedCar, carsCopy)
+            })
+        }
+
+        else
+        {
+            alert("Error: Incorrect username!  Please try again!")
+        }
+
+        carForm.reset()
    })
 
 } 
@@ -152,9 +181,8 @@ function addReview()
             headers: {
                 "Content-Type": "application/json", 
             },
-            body: JSON.stringify({ reviews: reviewListCopy }),
+            body: JSON.stringify({ reviews: reviewListCopy })
         })
-    
         .then(res => res.json())
         .then(updatedCar => {
             carsCopy = carsCopy.map(car => {
@@ -165,8 +193,7 @@ function addReview()
                     return car
                 }
             })
-            displayCarDetails(updatedCar)
-            createNavBar(carsCopy)
+            updatePageInfo(updatedCar, carsCopy)
         })
         reviewInput.value = ""
     })
@@ -230,8 +257,7 @@ function addCar()
                     resp.json().then(newCar =>
                         {
                             carsCopy.push(newCar)
-                            createNavBar(carsCopy)
-                            displayCarDetails(newCar)
+                            updatePageInfo(newCar, carsCopy)
                         })
                     }
                 else
@@ -270,8 +296,7 @@ function deleteCar()
                             {
                                 return currentCar.id !== car.id
                             })
-                        displayCarDetails(carsCopy[0])
-                        createNavBar(carsCopy)
+                        updatePageInfo(carsCopy[0], carsCopy)
                         alert("Car deleted!")
                     }
 
@@ -289,6 +314,12 @@ function deleteCar()
 
     carForm.reset()
     })
+}
+
+function updatePageInfo(car, carList)
+{
+    displayCarDetails(car)
+    createNavBar(carList)
 }
 
 getCars(url)
